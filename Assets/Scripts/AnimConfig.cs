@@ -7,8 +7,8 @@ namespace PlatformerMVC
     {
         idle,
         walk,
-        jump
-        //add new tracks here
+        jump,
+        ñrawl
     }
     [CreateAssetMenu(fileName = "SpriteAnimationsConfig", menuName = "Configs/SpriteAnimationsConfig", order = 1)]
     public class SpriteAnimationsConfig : ScriptableObject

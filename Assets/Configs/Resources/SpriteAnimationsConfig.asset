@@ -28,3 +28,26 @@ MonoBehaviour:
     - {fileID: 1914561715, guid: e07d0ffc4d2c97d43930f843e491c04a, type: 3}
     - {fileID: -933188505, guid: e07d0ffc4d2c97d43930f843e491c04a, type: 3}
     - {fileID: 1785711581, guid: e07d0ffc4d2c97d43930f843e491c04a, type: 3}
+  - Track: 0
+    Sprites:
+    - {fileID: -1190260898, guid: e07d0ffc4d2c97d43930f843e491c04a, type: 3}
+    - {fileID: 1658715798, guid: e07d0ffc4d2c97d43930f843e491c04a, type: 3}
+    - {fileID: 1856621455, guid: e07d0ffc4d2c97d43930f843e491c04a, type: 3}
+    - {fileID: -1238155348, guid: e07d0ffc4d2c97d43930f843e491c04a, type: 3}
+    - {fileID: -715953555, guid: e07d0ffc4d2c97d43930f843e491c04a, type: 3}
+    - {fileID: -744342842, guid: e07d0ffc4d2c97d43930f843e491c04a, type: 3}
+  - Track: 2
+    Sprites:
+    - {fileID: 1721530319, guid: e07d0ffc4d2c97d43930f843e491c04a, type: 3}
+    - {fileID: 1303501804, guid: e07d0ffc4d2c97d43930f843e491c04a, type: 3}
+    - {fileID: 1489424049, guid: e07d0ffc4d2c97d43930f843e491c04a, type: 3}
+    - {fileID: 228319894, guid: e07d0ffc4d2c97d43930f843e491c04a, type: 3}
+    - {fileID: -507417682, guid: e07d0ffc4d2c97d43930f843e491c04a, type: 3}
+    - {fileID: -813858420, guid: e07d0ffc4d2c97d43930f843e491c04a, type: 3}
+    - {fileID: -1757057148, guid: e07d0ffc4d2c97d43930f843e491c04a, type: 3}
+    - {fileID: -243343828, guid: e07d0ffc4d2c97d43930f843e491c04a, type: 3}
+  - Track: 3
+    Sprites:
+    - {fileID: -2077409490, guid: e07d0ffc4d2c97d43930f843e491c04a, type: 3}
+    - {fileID: -1463950686, guid: e07d0ffc4d2c97d43930f843e491c04a, type: 3}
+    - {fileID: 394762685, guid: e07d0ffc4d2c97d43930f843e491c04a, type: 3}
