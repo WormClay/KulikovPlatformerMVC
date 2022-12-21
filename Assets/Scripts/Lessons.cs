@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 namespace PlatformerMVC 
 {
@@ -7,25 +8,33 @@ namespace PlatformerMVC
         [SerializeField] private SpriteRenderer _back;
         [SerializeField] private CharacterView _characterView;
         [SerializeField] private EnemyView _enemyView;
+        [SerializeField] private CannonView _cannonView;
         private ParalaxManager _paralaxManager;
-        private SpriteAnimator _spriteAnimator;
         private SpriteAnimator _spriteAnimatorEnemy;
+        private MainHeroWalker _mainHeroWalker;
+        private AimingMuzzle _aimingMuzzle;
+        private List<BulletView> _bulletViews = new List<BulletView>();
+        private BulletsEmitter _bulletsEmitter;
         private void Start()
         {
-            SpriteAnimationsConfig config = Resources.Load<SpriteAnimationsConfig>("SpriteAnimationsConfig");
-            _spriteAnimator = new SpriteAnimator(config);
-            _spriteAnimator.StartAnimation(_characterView.SpriteRenderer, Track.walk, true, 10);
+            _mainHeroWalker = new MainHeroWalker(_characterView);
+            _aimingMuzzle = new AimingMuzzle(_cannonView.MuzzleTransform, _characterView.transform);
 
-            SpriteAnimationsConfig configEnemy = Resources.Load<SpriteAnimationsConfig>("SpriteAnimationsConfigEnemy");
-            _spriteAnimatorEnemy = new SpriteAnimator(configEnemy);
-            _spriteAnimatorEnemy.StartAnimation(_enemyView.SpriteRenderer, Track.walk, true, 10);
+            var bullet = Resources.Load<BulletView>("Bullet");
+            _bulletViews.Add(Instantiate(bullet, _cannonView.MuzzleTransform));
+            _bulletViews.Add(Instantiate(bullet, _cannonView.MuzzleTransform));
+            _bulletViews.Add(Instantiate(bullet, _cannonView.MuzzleTransform));
+            _bulletsEmitter = new BulletsEmitter(_bulletViews, _cannonView.MuzzleTransform);
 
             _paralaxManager = new ParalaxManager(_camera.transform, _back.transform);
         }
         private void Update()
         {
-            _spriteAnimator.Update();
-            _spriteAnimatorEnemy.Update();
+            //_spriteAnimator.Update();
+            _mainHeroWalker.Update();
+            _aimingMuzzle.Update();
+            _bulletsEmitter.Update();
+            //_spriteAnimatorEnemy.Update();
             _paralaxManager.Update();
         }
         private void FixedUpdate()
@@ -35,7 +44,8 @@ namespace PlatformerMVC
         }
         private void OnDestroy()
         {
-            _spriteAnimator.Dispose();
+            _mainHeroWalker.OnDestroy();
+            //_spriteAnimator.Dispose();
             //_someManager.Dispose();
             //dispose logic managers here <7>
         }
