@@ -18,6 +18,7 @@ namespace PlatformerMVC
         public void Update()
         {
             _back.position = _backStartPosition + (_camera.position - _cameraStartPosition) * _coef;
+
         }
     }
 }

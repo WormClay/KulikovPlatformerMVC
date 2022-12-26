@@ -4,9 +4,9 @@ namespace PlatformerMVC
 {
     public sealed class BulletsEmitter
     {
-        private const float _delay = 1;
-        private const float _startSpeed = 10;
-        private List<Bullet> _bullets = new List<Bullet>();
+        private const float _delay = 3;
+        private const float _startSpeed = 40;
+        private List<PhysicsBullet> _bullets = new List<PhysicsBullet>();
         private Transform _transform;
         private int _currentIndex;
         private float _timeTillNextBullet;
@@ -15,7 +15,7 @@ namespace PlatformerMVC
             _transform = transform;
             foreach (var bulletView in bulletViews)
             {
-                _bullets.Add(new Bullet(bulletView));
+                _bullets.Add(new PhysicsBullet(bulletView));
             }
         }
         public void Update()
@@ -31,7 +31,6 @@ namespace PlatformerMVC
                 _currentIndex++;
                 if (_currentIndex >= _bullets.Count) _currentIndex = 0;
             }
-            _bullets.ForEach(b => b.Update());
         }
     }
 }

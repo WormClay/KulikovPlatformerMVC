@@ -17,9 +17,9 @@ namespace PlatformerMVC
         private bool _doJump;
         private bool _do—rawl;
         private float _xAxisInput;
-        private CharacterView _view;
+        private LevelObjectView _view;
         private SpriteAnimator _spriteAnimator;
-        public MainHeroWalker(CharacterView view)
+        public MainHeroWalker(LevelObjectView view)
         {
             _view = view;
             SpriteAnimationsConfig config = Resources.Load<SpriteAnimationsConfig>("SpriteAnimationsConfig");

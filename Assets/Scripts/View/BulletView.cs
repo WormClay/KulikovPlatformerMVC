@@ -1,24 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-public sealed class BulletView : MonoBehaviour
+namespace PlatformerMVC
 {
-    public Transform Transform;
-    public void SetVisible(bool value) 
+    public sealed class BulletView : MonoBehaviour
     {
-        gameObject.SetActive(value);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public Transform Transform;
+        public Rigidbody2D Rigidbody2D;
+        public Collider2D Collider2D;
+        public TrailRenderer TrailRenderer; 
+        public void SetVisible(bool value)
+        {
+            gameObject.SetActive(value);
+        }
     }
 }
