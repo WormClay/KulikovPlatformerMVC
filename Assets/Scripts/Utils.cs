@@ -12,4 +12,10 @@ namespace PlatformerMVC
             return new Vector2(x == null ? org.x : (float)x, y == null ? org.y : (float)y);
         }
     }
+    public enum DangerType
+    {
+        fire,
+        laser,
+        none
+    }
 }

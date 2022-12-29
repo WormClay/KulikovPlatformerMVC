@@ -9,6 +9,7 @@ namespace PlatformerMVC
         public Collider2D Collider2D;
         public Rigidbody2D Rigidbody2D;
         public Action<LevelObjectView> OnLevelObjectContact { get; set; }
+        public DangerType DangerType = DangerType.fire;
         void OnTriggerEnter2D(Collider2D collider)
         {
             var levelObject = collider.gameObject.GetComponent<LevelObjectView>();
