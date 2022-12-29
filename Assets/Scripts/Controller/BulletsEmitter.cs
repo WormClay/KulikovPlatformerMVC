@@ -9,7 +9,7 @@ namespace PlatformerMVC
         private List<PhysicsBullet> _bullets = new List<PhysicsBullet>();
         private Transform _transform;
         private int _currentIndex;
-        private float _timeTillNextBullet;
+        private float _timeTillNextBullet = _delay;
         public BulletsEmitter(List<BulletView> bulletViews, Transform transform)
         {
             _transform = transform;

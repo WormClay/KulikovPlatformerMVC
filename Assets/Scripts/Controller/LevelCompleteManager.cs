@@ -22,7 +22,10 @@ namespace PlatformerMVC
             _spriteAnimator = new SpriteAnimator(config);
             foreach (var deathZone in deathZones)
             {
-                _spriteAnimator.StartAnimation(deathZone.SpriteRenderer, Track.idle, true, _animationsSpeed);
+                if (deathZone.DangerType == DangerType.fire)
+                {
+                    _spriteAnimator.StartAnimation(deathZone.SpriteRenderer, Track.idle, true, _animationsSpeed);
+                }
             }
         }
         private void OnLevelObjectContact(LevelObjectView contactView)

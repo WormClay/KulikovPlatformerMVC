@@ -102,6 +102,7 @@ MonoBehaviour:
   SpriteRenderer: {fileID: 822394594361453217}
   Collider2D: {fileID: 3450738944818071589}
   Rigidbody2D: {fileID: 0}
+  DangerType: 2
 --- !u!58 &3450738944818071589
 CircleCollider2D:
   m_ObjectHideFlags: 0
