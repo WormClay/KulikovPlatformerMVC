@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 namespace PlatformerMVC
 {
@@ -17,5 +18,14 @@ namespace PlatformerMVC
         fire,
         laser,
         none
+    }
+    [Serializable]
+    public struct AIConfig
+    {
+        public float speed;
+        public float minDistanceToTarget;
+        public Transform[] waypoints;
+        public Transform playerTransform;
+        public float maxDistanceToPlayer;
     }
 }
