@@ -9,6 +9,7 @@ namespace PlatformerMVC
         [SerializeField] private LevelObjectView _characterView;
         [SerializeField] private EnemyView _enemyView;
         [SerializeField] private CannonView _cannonView;
+        [SerializeField] private GeneratorLevelView _generatorView;
         private ParalaxManager _paralaxManager;
         private SpriteAnimator _spriteAnimatorEnemy;
         // private MainHeroWalker _mainHeroWalker;
@@ -21,7 +22,9 @@ namespace PlatformerMVC
         private List<LevelObjectView> _deathZones = new List<LevelObjectView>();
         private List<LevelObjectView> _winZones = new List<LevelObjectView>();
         private LevelCompleteManager _levelCompleteManager;
-        private MoveCamera _moveCamera;
+        //private MoveCamera _moveCamera;
+        private CameraController _cameraController;
+        private GeneratorController _generatorController;
         private void Start()
         {
             _mainHeroWalker = new MainHeroPhysicsWalker(_characterView);
@@ -42,7 +45,11 @@ namespace PlatformerMVC
             _winZones.AddRange(GameObject.Find("WinZones").GetComponentsInChildren<LevelObjectView>());
             _levelCompleteManager = new LevelCompleteManager(_characterView, _deathZones, _winZones);
 
-            _moveCamera = new MoveCamera(_camera.transform);
+            //_moveCamera = new MoveCamera(_camera.transform);
+            _cameraController = new CameraController(_characterView, _camera.transform);
+
+            _generatorController = new GeneratorController(_generatorView);
+            _generatorController.Start();
         }
         private void Update()
         {
@@ -54,7 +61,8 @@ namespace PlatformerMVC
             _paralaxManager.Update();
             _coinsManager.Update();
             _levelCompleteManager.Update();
-            _moveCamera.Update(_characterView.transform.position);
+            //_moveCamera.Update(_characterView.transform.position);
+            _cameraController.Update();
         }
         private void FixedUpdate()
         {
