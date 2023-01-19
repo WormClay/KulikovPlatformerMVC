@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 namespace PlatformerMVC
 {
-    public sealed class LevelObjectView : MonoBehaviour
+    public class LevelObjectView : MonoBehaviour
     {
         public Transform Transform;
         public SpriteRenderer SpriteRenderer;
